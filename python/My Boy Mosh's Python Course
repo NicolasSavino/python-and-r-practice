@@ -1,0 +1,203 @@
+# --- Basic Output ---
+print("Hello World")  # Simple output
+print("*" * 10)  # Print 10 asterisks
+
+# --- Simple Arithmetic (won't show unless printed) ---
+print(2 + 3)
+
+# --- Variables and Data Types ---
+x = 1  # Integer
+y = 2
+unit_price = 3
+print("*" * 3)  # Print 3 asterisks
+
+students_count = 1000  # Integer
+rating = 4.99  # Float
+is_published = False  # Boolean
+course_name = "Python Programming"
+print(students_count)
+
+# --- Strings and Indexing ---
+course = "Python Programming"
+print(len(course))       # Length of string
+print(course[0])         # First character
+print(course[-1])        # Last character
+print(course[0:3])       # Characters 0 to 2
+print(course[0:])        # From index 0 to end
+print(course[:3])        # First 3 characters
+print(course[:])         # Entire string
+
+# --- Escape Sequences ---
+course = "Python \"Programming"
+print(course)
+
+# --- Formatted Strings ---
+first = "Nicolas"
+last = "Savino"
+full = f"{first} {last}"
+print(full)
+
+full = f"{len(first)} {2 + 2}"  # Expressions inside f-string
+print(full)
+
+# --- String Methods ---
+course = "   Python Programming"
+print(course.upper())
+print(course.lower())
+print(course.title())
+print(course.strip())
+print(course.find("Pro"))
+print(course.replace("P", "J"))
+print("pro" in course)
+print("swift" not in course)
+
+# --- Numbers and Operators ---
+x = 1
+x = 1.1
+x = 1 + 2j  # Complex number
+
+print(10 + 3)
+print(10 - 3)
+print(10 * 3)
+print(10 / 3)
+print(10 // 3)
+print(10 % 3)
+print(10 ** 3)
+
+# --- Augmented Assignment ---
+x = 10
+x = x + 3
+x += 3
+
+# --- Math Functions ---
+import math
+print(round(2.9))
+print(abs(-2.9))
+print(math.ceil(2.2))
+
+# --- Input and Type Conversion ---
+x = input("x: ")
+y = int(x) + 1  # Convert input to int first
+print(f"x: {x}, y: {y}")
+
+# --- Conditional Statements ---
+temperature = 35
+if temperature > 30:
+    print("It's warm")
+    print("Drink water")
+elif temperature > 20:
+    print("It's nice")
+else:
+    print("It's cold")
+print("Done")
+
+age = 22
+# Ternary (conditional) expression
+message = "Eligible" if age >= 18 else "Not eligible"
+print(message)
+
+# --- Logical Operators ---
+high_income = True
+good_credit = True
+student = True
+
+if high_income and good_credit:
+    print("Eligible")
+else:
+    print("Not eligible")
+
+if not student:
+    print("Eligible")
+else:
+    print("Not eligible")
+
+if high_income and good_credit and not student:
+    print("Eligible")
+
+# --- Range Check ---
+age = 22
+if 18 <= age < 65:
+    print("Eligible")
+
+print("Sending a message")
+
+# --- Loops ---
+for number in range(1, 4):
+    print("Attempt", number + 1, (number + 1) * ".")
+
+successful = True
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break
+else:
+    print("Attempted 3 times")
+
+# Nested loops
+for x in range(5):
+    for y in range(3):
+        print(f"({x}, {y})")
+
+print(type(5))
+print(type(range(5)))
+
+# --- Iterables ---
+for x in "Python":
+    print(x)
+
+# Example list
+shopping_cart = ["Book", "Pen", "Laptop"]
+for item in shopping_cart:
+    print(item)
+
+# --- While Loop ---
+number = 100
+while number > 0:
+    print(number)
+    number //= 2
+
+command = ""
+while command != "quit":
+    command = input(">")
+    print("ECHO", command)
+
+# --- Counting Even Numbers ---
+count = 0
+for number in range(1, 10):
+    if number % 2 == 0:
+        count += 1
+        print(number)
+print(f"We have {count} even numbers")
+
+# --- Functions ---
+def greet(first_name, last_name):
+    print(f"Hi {first_name} {last_name}")
+    print("Welcome aboard")
+
+greet("Nicolas", "Savino")
+greet("John", "Smith")
+
+def greet(name):
+    print(f"Hi {name}")
+
+def get_greeting(name):
+    return f"Hi {name}"
+
+message = get_greeting("Nicolas")
+print(message)
+
+def increment(number, by=1):
+    return number + by
+
+print(increment(2, by=1))
+print(increment(2, 5))
+
+# --- Variable-length Arguments ---
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+print(multiply(2, 3, 4, 5))
