@@ -1,0 +1,27 @@
+# 🧙‍♂️ This program greets you, gets your name and age, and gives a fun fact.
+
+# Print a welcome message
+print("Welcome, young wizard-in-training!")
+print("What is your name?")  # Ask for their name
+
+# Get the name and store it in a variable
+wizardName = input()
+
+# Say hello to the user
+print("Greetings, " + wizardName + "! A powerful name indeed.")
+print("The number of letters in your name is:")
+print(len(wizardName))  # Use len() to find out how long their name is
+
+# Ask for the user's age
+print("And now, what is your age?")
+wizardAge = input()
+
+# Convert the age string to an integer
+wizardAge = int(wizardAge)
+
+# Tell them how old they'll be next year
+print("Next year, you shall be " + str(wizardAge + 1) + " years old!")
+
+# Bonus: create a magic chant by repeating their name
+print("Here's your magical chant:")
+print((wizardName + " the Wise! ") * 3)
