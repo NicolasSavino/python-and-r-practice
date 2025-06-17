@@ -1,0 +1,56 @@
+# Ground Shipping
+def ground_shipping(weight):
+    if weight <= 2:
+        cost = weight * 1.50 + 20.00
+    elif weight <= 6:
+        cost = weight * 3.00 + 20.00
+    elif weight <= 10:
+        cost = weight * 4.00 + 20.00
+    else:
+        cost = weight * 4.75 + 20.00
+    return cost
+
+# Ground Shipping Premium
+premium_ground_shipping = 125.00
+
+# Drone Shipping
+def drone_shipping(weight):
+    if weight <= 2:
+        cost = weight * 4.50
+    elif weight <= 6:
+        cost = weight * 9.00
+    elif weight <= 10:
+        cost = weight * 12.00
+    else:
+        cost = weight * 14.25
+    return cost
+
+# Function to determine the cheapest shipping option
+def cheapest_shipping(weight):
+    ground = ground_shipping(weight)
+    drone = drone_shipping(weight)
+    premium = premium_ground_shipping
+
+    if ground < drone and ground < premium:
+        method = "Ground Shipping"
+        cost = ground
+    elif drone < ground and drone < premium:
+        method = "Drone Shipping"
+        cost = drone
+    else:
+        method = "Premium Ground Shipping"
+        cost = premium
+
+    return method, cost
+
+# TEST CASES
+print("Cost to ship 8.4 lb (Ground): $", ground_shipping(8.4))  # Should be $53.60
+print("Cost to ship 1.5 lb (Drone): $", drone_shipping(1.5))     # Should be $6.75
+
+# Cheapest method for 4.8 lb
+method_4_8, cost_4_8 = cheapest_shipping(4.8)
+print(f"Cheapest for 4.8 lb: {method_4_8}, Cost: ${cost_4_8:.2f}")
+
+# Cheapest method for 41.5 lb
+method_41_5, cost_41_5 = cheapest_shipping(41.5)
+print(f"Cheapest for 41.5 lb: {method_41_5}, Cost: ${cost_41_5:.2f}")
